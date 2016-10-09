@@ -22,13 +22,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private AudioSource audio;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
     }
 
-    void Update()
+    private void Update()
     {
         if(Input.GetButton("Fire1") && Time.time > nextFire)
         {
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-	void FixedUpdate ()
+    private void FixedUpdate ()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");

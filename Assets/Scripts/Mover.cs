@@ -7,7 +7,7 @@ public class Mover : MonoBehaviour
 
     private Rigidbody rb;
 
-	void Start ()
+    private void Start ()
     {
         rb = GetComponent<Rigidbody>();
 

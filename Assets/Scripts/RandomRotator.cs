@@ -5,7 +5,7 @@ public class RandomRotator : MonoBehaviour
 {
     public float tuble;
 
-    void Start()
+    private void Start()
     {
         var astertics = GetComponent<Rigidbody>();
         astertics.angularVelocity = Random.insideUnitSphere * tuble;

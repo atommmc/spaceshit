@@ -5,8 +5,19 @@ public class DestroyByContact : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject playerExplosion;
+    private GameController gameController;
+    public int scoreValue;
 
-    void OnTriggerEnter(Collider other)
+    private void Start()
+    {
+        GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
+        if (gameControllerObject != null)
+        {
+            gameController = gameControllerObject.GetComponent<GameController>();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Boundary")
         {
@@ -18,6 +29,7 @@ public class DestroyByContact : MonoBehaviour
         {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
         }
+        gameController.AddScore(scoreValue);
         Destroy(other.gameObject);
         Destroy(gameObject);
     }
